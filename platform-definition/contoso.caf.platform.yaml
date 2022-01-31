@@ -26,14 +26,14 @@ caf_terraform:
     blob_versioning_enabled: true
     container_delete_retention_policy: 7
     delete_retention_policy: 7
-    # Subscription_id to deploy the launchpad. Note 1 existing manual subscription is required to deploy the launhchapd. 
+    # Subscription_id to deploy the launchpad. Note 1 existing manual subscription is required to deploy the launhchapd.
     subscription_id: <replace>
     subscription_name: contoso-caf-launchpad
     tenant_id: <replace>
 
   billing_subscription_role_delegations:
     # true: enable this deployment. The remaining attributes are required.
-    # false: disable this deployment. 
+    # false: disable this deployment.
     #     azuread_user_ea_account_owner: set the upn of the user doing the manual deployment of the platform
     #     azuread_user_ea_account_owner_object_id: if that user is already loged-in to an azure cli session you can get the object_id by running:
     #         az ad signed-in-user show --query objectId -o tsv
@@ -81,7 +81,7 @@ platform_core_setup:
       v0.3.3:
         caf_landingzone_branch: "patch.5.4.4"
       v1.1.1:
-        caf_landingzone_branch: "2112.int"
+        caf_landingzone_branch: "2201.0"
 
 platform_management:
   enable: true
@@ -98,8 +98,8 @@ platform_identity:
   azuread_identity_mode: service_principal
   # UPNs you want to add in the caf_platform_maintainers Azure AD group
   # Can use user or guest accounts
-  # Those users will have full permissions on platform. 
-  # Once setup, you can remove them from here or add them from 
+  # Those users will have full permissions on platform.
+  # Once setup, you can remove them from here or add them from
   # Check in Azure AD the User Principal Name attribute value. Note there is a special convention for guest accounts.
   caf_platform_maintainers:
     - <replace>
@@ -113,6 +113,6 @@ notifications:
   security_center_email_contact: <replace>
 
 gitops:
-  caf_landingzone_branch: "2112.int"
+  caf_landingzone_branch: "2201.0"
   deployment_mode: interactive
   rover_log_error: ERROR

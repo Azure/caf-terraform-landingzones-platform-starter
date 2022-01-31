@@ -7,7 +7,7 @@
 ```bash
 cd /tf/caf/landingzones
 git pull
-git checkout 2112.int
+git checkout 2201.0
 
 ```
 
