@@ -5,6 +5,7 @@
 
 ### clone the landingzone project (Terraform base code)
 ```bash
+git clone https://github.com/Azure/caf-terraform-landingzones.git landingzones
 cd /tf/caf/landingzones
 git pull
 git checkout 2201.0
