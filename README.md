@@ -1,14 +1,55 @@
-# Project
+[![Gitter](https://badges.gitter.im/aztfmod/community.svg)](https://gitter.im/aztfmod/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+# Cloud Adoption Framework landing zones for Terraform - Platform starter template
 
-As the maintainer of this project, please make a few updates:
+Microsoft [Cloud Adoption Framework for Azure](https://aka.ms/caf) provides you with guidance and best practices to adopt Azure.
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+A landing zone is a segment of a cloud environment, that has been preprovisioned through code, and is dedicated to the support of one or more workloads. Landing zones provide access to foundational tools and controls to establish a compliant place to innovate and build new workloads in the cloud, or to migrate existing workloads to the cloud. Landing zones use defined sets of cloud services and best practices to set you up for success.
+
+## :rocket: Getting started
+
+To get started with creating your environment, you can fork this repository on your Git environment (inside your personal or organization GitHub, inside an Azure DevOps project or any other Version Control System that your company uses.)
+
+We recommend you refer to the CAF Terraform landing zones documentation availble at [GitHub Pages](https://aka.ms/caf/terraform).
+
+## :space_invader: Platform starter template
+
+The purpose of this repository is to provide you with a starting point when composing your Cloud Adoption Framework for Azure landing zones for platform on Terraform. It provides with sample files, folder structure and advices on how to get started creating and Infrastructure as Code and DevOps environment.
+
+In CAF landing zones for Terraform, our approach is to separate the logic repository and the configuration repositories (for platform and application landing zones).
+
+* **Platform configuration repositories**: this template is an example of configuration repository for CAF landing zones platforms, containing definition of the configuration for your different core environment (often managed by centralized operations).
+
+* **Application configuration repositories**: [another starter](https://github.com/Azure/caf-terraform-landingzones-starter) with examples of application configurations files for CAF landing zones.
+
+* **Logic repository**: the Azure CAF landing [zone repository](https://github.com/azure/caf-terraform-landingzones)
+
+This approach allows you to easily:
+
+* check-in your configuration in your specific Git repository.
+* resync the code with the public codebase for updates.
+* customize the code if needed and contribute back to the community.
+
+
+
+## Related repositories
+
+Landing zones for Terraform are composed of multiple open-source components and projects:
+
+| Repo                                                                                              | Description                                                |
+|---------------------------------------------------------------------------------------------------|------------------------------------------------------------|
+| [caf-terraform-landingzones](https://github.com/azure/caf-terraform-landingzones) | landing zones repo with sample and core documentations     |
+| [rover](https://github.com/aztfmod/rover)                                                         | devops toolset for operating landing zones                 |
+| [azure_caf_provider](https://github.com/aztfmod/terraform-provider-azurecaf)                      | custom provider for naming conventions                     |
+| [module](https://registry.terraform.io/modules/aztfmod)                                          | CAF Terraform module |
+
+## Community
+
+Feel free to open an issue for feature or bug, or to submit a pull request.
+
+In case you have any question, you can reach out to tf-landingzones at microsoft dot com.
+
+You can also reach us on [Gitter](https://gitter.im/aztfmod/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Contributing
 
@@ -26,8 +67,8 @@ contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additio
 
 ## Trademarks
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
 [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
 Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
 Any use of third-party trademarks or logos are subject to those third-party's policies.

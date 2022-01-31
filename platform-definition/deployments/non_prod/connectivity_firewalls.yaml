@@ -1,5 +1,5 @@
 gitops:
-  landingzones: 2112.int
+  landingzones: 2201.0
 
 deployments:
   connectivity:
