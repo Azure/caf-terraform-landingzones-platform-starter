@@ -1,5 +1,5 @@
 {
-    "name": "CAF Starter Terraform platform landing zones",
+    "name": "CAF Platform Starter Terraform landing zones",
 
     // Update the 'dockerComposeFile' list if you have more compose files or use different names.
     "dockerComposeFile": "docker-compose.yml",
