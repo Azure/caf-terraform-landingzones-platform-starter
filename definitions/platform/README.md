@@ -8,7 +8,7 @@
 git clone https://github.com/Azure/caf-terraform-landingzones.git /tf/caf/landingzones
 cd /tf/caf/landingzones
 git pull
-git checkout 2201.0
+git checkout 2202.0
 
 ```
 
@@ -23,7 +23,7 @@ rover ignite \
   --playbook /tf/caf/landingzones/templates/platform/ansible.yaml \
   -e base_templates_folder=/tf/caf/landingzones/templates/platform \
   -e resource_template_folder=/tf/caf/landingzones/templates/resources \
-  -e config_folder=/tf/caf/platform-definition
+  -e config_folder=/tf/caf/definitions/platform
 
 ```
 

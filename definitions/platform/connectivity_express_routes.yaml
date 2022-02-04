@@ -1,20 +1,20 @@
 gitops:
-  caf_landingzone_branch: 2201.0
+  caf_landingzone_branch: 2202.0
 
 express_route_circuits:
   prod:
     name: er-1-prod
     resource_group_key: prod
-    service_provider_name: XL Axiata
-    peering_location: Jakarta
+    service_provider_name: <replace>
+    peering_location: <replace>
     tier: Standard
     family: MeteredData
     bandwidth_in_mbps: 50
   non_prod:
     name: er-1-nonprod
     resource_group_key: non_prod
-    service_provider_name: XL Axiata
-    peering_location: Jakarta
+    service_provider_name: <replace>
+    peering_location: <replace>
     tier: Standard
     family: MeteredData
     bandwidth_in_mbps: 50

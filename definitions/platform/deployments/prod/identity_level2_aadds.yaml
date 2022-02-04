@@ -1,5 +1,5 @@
 gitops:
-  landingzones: 2201.0
+  landingzones: 2202.0
 
 deployments:
   identity:
