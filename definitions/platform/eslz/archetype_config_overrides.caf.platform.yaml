@@ -280,6 +280,7 @@ archetype_definitions:
             attribute_key: id
             resource_keys:
               - subscription_creation_landingzones
+              - identity
   management:
     archetype_id: platform_management
     archetype_config:

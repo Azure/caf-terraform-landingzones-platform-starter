@@ -30,11 +30,15 @@ caf_terraform:
     subscription_id: <replace>
     subscription_name: contoso-caf-launchpad
     tenant_id: <replace>
+    global_tags_propagated: yes
+    tags:
+      <replace>: <replace>
 
   billing_subscription_role_delegations:
     # true: enable this deployment. The remaining attributes are required.
     # false: disable this deployment.
     #     azuread_user_ea_account_owner: set the upn of the user doing the manual deployment of the platform
+    #         az ad signed-in-user show --query userPrincipalName -o tsv
     #     azuread_user_ea_account_owner_object_id: if that user is already loged-in to an azure cli session you can get the object_id by running:
     #         az ad signed-in-user show --query objectId -o tsv
     #     The remaining attributes are ignored: [billing_account_name, enrollment_account_name]
