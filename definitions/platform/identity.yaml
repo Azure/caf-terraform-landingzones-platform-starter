@@ -1,33 +1,10 @@
 subscriptions:
-  management:
+  identity:
     resource_groups:
       management:
         name: management
       alerts:
         name: alerts
-    
-    diagnostic_log_analytics:
-      # if you change this key you also need to change it in the ESLZ deployment
-      # eslz/archetype_config_overrides.caf.platform.yaml
-      # eslz/custom_landing_zones.caf.platform.yaml
-      region1:
-        name: logre1
-        resource_group_key: management
-
-    monitor_action_groups:
-      networking_operations:
-        action_group_name: Networking Operations
-        shortname: netops
-        arm_role_alert:
-          contributors:
-            name: contributors
-            role_name: servicehealth-alerts-contributors<replace>
-            use_common_alert_schema: false
-        email_receiver:
-          noc:
-            name: email_alert_support1
-            email_address: <replace>
-            use_common_alert_schema: false
 
     service_health_alerts:
       enable_service_health_alerts: true
@@ -38,13 +15,8 @@ subscriptions:
       email_alert_settings:
         support1:
           name: email_alert_support1
-          email_address: <replace>
+          email_address: lalesle@microsoft.com
           use_common_alert_schema: false
-
-    automation_accounts:
-      account1:
-        name: automationAccount1
-        resource_group_key: management
 
     recovery_vaults:
       asr:
@@ -81,3 +53,17 @@ subscriptions:
                   - January
                 weekdays:
                   - Sunday
+
+
+# Bring here you existing active directory security groups.
+# Those are the groups you will inject to RBAC in the Enterprise Scale deployment.
+# Note Terraform will create a new Azure AD group and add the existing as a member
+#
+# level1:
+#   azuread_groups:
+#     network_ops_team:
+#       name: netops
+#       members:
+#         # Set the list of the existing groups
+#         objects_ids:
+#          - existing_azure_ad_group_object_id
