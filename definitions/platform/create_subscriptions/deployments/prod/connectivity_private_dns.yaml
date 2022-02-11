@@ -10,10 +10,9 @@ deployments:
             private_dns: prod
         global_settings_key:
           platform:
-            virtual_wan:
+            azurerm_firewalls:
         remote_tfstates:
           platform:
-            virtual_wan:
             azurerm_firewalls: prod
             identity_level2: prod
 

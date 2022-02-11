@@ -10,10 +10,10 @@ deployments:
             private_dns: prod
         global_settings_key:
           platform:
-            virtual_hubs: prod
+            azurerm_firewalls: prod
         remote_tfstates:
           platform:
-            virtual_hubs: prod
+            azurerm_firewalls: prod
 
 subscriptions:
   connectivity:
