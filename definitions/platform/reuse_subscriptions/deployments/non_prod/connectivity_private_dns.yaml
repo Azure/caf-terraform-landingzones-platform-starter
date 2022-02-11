@@ -14,7 +14,7 @@ deployments:
         remote_tfstates:
           platform:
             azurerm_firewalls: non_prod
-
+            identity_level2: non_prod
 
 subscriptions:
   connectivity:
