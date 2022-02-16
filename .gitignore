@@ -11,8 +11,9 @@
 **/*.log
 **/backend.azurerm.tf
 public
-aztfmod
+/aztfmod
 /landingzones
+/eslz
 /starter
 **/*.crt
 **/*.csr
