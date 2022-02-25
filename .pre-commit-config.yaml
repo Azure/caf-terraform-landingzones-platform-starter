@@ -16,7 +16,3 @@ repos:
       - id: detect-private-key
       - id: check-yaml
       - id: check-added-large-files
-  # - repo: git://github.com/markdownlint/markdownlint
-  #   rev: v0.11.0
-  #   hooks:
-  #     - id: markdownlint
