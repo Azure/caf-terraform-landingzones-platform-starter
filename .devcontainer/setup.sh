@@ -23,14 +23,5 @@ git config --global --add safe.directory /tf/caf/aztfmod
 
 if [ ! -d /tf/caf/landingzones ]; then
   git clone --branch int-5.6.0 --single-branch https://github.com/Azure/caf-terraform-landingzones.git /tf/caf/landingzones
-fi
-
-if [ ! -d /tf/caf/platform/definition ]; then
-
-  if [ ! $(az account show -o json 2>/dev/null ) ]; then
-    rover login
-  fi
-
-  /tf/caf/landingzones/templates/platform/deploy_platform.sh
-
+  chmod +x /tf/caf/landingzones/templates/*
 fi
