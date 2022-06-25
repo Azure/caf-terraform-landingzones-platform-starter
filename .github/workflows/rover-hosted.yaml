@@ -99,7 +99,7 @@ jobs:
     runs-on: ubuntu-latest
 
     container:
-      image: aztfmod/rover:1.1.7-2203.2311
+      image: aztfmod/rover:1.2.1-2206.1703
       options: --user 0
     
     steps:
@@ -113,8 +113,11 @@ jobs:
 
       - name: Checkout Configuration
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
 
-      - name: checkout
+      - name: checkout base terraform landingzone code
         shell: bash
         run: |
           rm -rf ./landingzones
@@ -176,27 +179,42 @@ jobs:
           plan_file=${plan//' -plan:  '/}
           echo "plan file: '${plan_file}'"
 
-          apply=true
+          apply=false
 
           if [ "${{ inputs.terraform_action }}" = 'plan_apply' ]; then
+            echo "condition 0f"
             verify=false
           else
+            echo "condition 0t"
             verify=true
           fi
 
-          if [ "$(cat ${{ steps.generate-rover-command.outputs.output_file }} | grep -o "0 to destroy")" != '0 to destroy' ]; then
-            apply=true
-            verify=true
-          fi
-          if [ "$(cat ${{ steps.generate-rover-command.outputs.output_file }} | grep -o "0 to change")" != '0 to change' ]; then
-            apply=true
-          fi
-          if [ "$(cat ${{ steps.generate-rover-command.outputs.output_file }} | grep -o "0 to add")" != '0 to add' ]; then
-            apply=true
-          fi
-          if [ "$(cat ${{ steps.generate-rover-command.outputs.output_file }} | grep -o "so no changes are needed")" = 'so no changes are needed' ]; then
-            apply=false
-            verify=false
+          if [ "$(cat outputfile | grep -o 'No changes')" != 'No changes' ]; then
+            if [ "$(cat outputfile | grep -o '0 to destroy')" != '0 to destroy' ]; then
+              echo "condition 1"
+              apply=true
+              verify=true
+            fi
+            if [ "$(cat outputfile | grep -o '0 to change')" != '0 to change' ]; then
+              echo "condition 2"
+              apply=true
+            fi
+            if [ "$(cat outputfile | grep -o '0 to add')" != '0 to add' ]; then
+              echo "condition 3"
+              apply=true
+            fi
+            if [ "$(cat outputfile | grep -o 'so no changes are needed')" = 'so no changes are needed' ]; then
+              echo "condition 4"
+              apply=false
+              verify=false
+            fi
+            if [ "$(cat outputfile | grep -o 'Error on or near line')" = 'Error on or near line' ]; then
+              echo "condition 5"
+              apply=false
+              verify=false
+              set -e
+              exit 1
+            fi
           fi
 
           echo "apply: ${apply}"
@@ -223,7 +241,7 @@ jobs:
         run: |
           az account clear
           echo "Azure session closed."
-          rm -rf "outputfile"
+          rm -rf outputfile
           rm -rf "$(readlink -f ${{inputs.tfstate}}.output)"
           rm -rf ${{inputs.tfstate}}
           rm -rf ${{inputs.plan_path}}

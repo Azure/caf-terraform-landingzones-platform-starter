@@ -20,6 +20,7 @@ git config --global --add safe.directory /tf/caf/landingzones
 git config --global --add safe.directory /tf/caf/landingzones/aztfmod
 git config --global --add safe.directory /tf/caf/aztfmod
 
+git config pull.rebase false 
 
 if [ ! -d /tf/caf/landingzones ]; then
   git clone --branch int-5.6.0 --single-branch https://github.com/Azure/caf-terraform-landingzones.git /tf/caf/landingzones
