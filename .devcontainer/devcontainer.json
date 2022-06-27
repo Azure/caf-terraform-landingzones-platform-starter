@@ -20,7 +20,7 @@
     "settings": {
         "files.eol": "\n",
         "editor.tabSize": 2,
-        "terminal.integrated.scrollback": 64000,
+        "terminal.integrated.scrollback": 64000
     },
 
     // Uncomment the next line if you want start specific services in your Docker Compose config.
@@ -29,8 +29,8 @@
     // Uncomment this like if you want to keep your containers running after VS Code shuts down.
     // "shutdownAction": "none",
 
-    // Uncomment the next line to run commands after the container is created.
-    "postStartCommand": "sudo chmod 666 /var/run/docker.sock || true && sudo cp -R /tmp/.ssh-localhost/* ~/.ssh && sudo chown -R $(whoami):$(whoami) ~ || true && sudo chmod 400 ~/.ssh/* && git config --global core.editor vim && pre-commit install && pre-commit autoupdate",
+    "postCreateCommand": "bash ./.devcontainer/setup.sh",
+    "postStartCommand": "bash ./.devcontainer/setup.sh",
     // Add the IDs of extensions you want installed when the container is created in the array below.
     "extensions": [
         "4ops.terraform",
