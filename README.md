@@ -8,6 +8,8 @@ A landing zone is a segment of a cloud environment, that has been preprovisioned
 
 ## :rocket: Getting started: go read the docs!
 
+
+
 Refer to the CAF Terraform landing zones documentation available at [GitHub Pages](https://aka.ms/caf/terraform).
 
 ![homepage](https://aztfmod.github.io/documentation/img/homepage.png)
