@@ -6,7 +6,7 @@
   version: '3.7'
   services:
     rover:
-      image: aztfmod/rover-preview:1.2.3-2206.270515
+      image: aztfmod/rover:1.2.3-2206.2707
       user: vscode
 
       # Uncomment to access Azure VPN and rebuild container

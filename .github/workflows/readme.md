@@ -1,0 +1,1 @@
+Github workflows provided in this solution accelerator are provided as is and must be customized to the customer's need.
