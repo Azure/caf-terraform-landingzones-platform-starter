@@ -15,6 +15,7 @@ Select the following scopes:
 - repo
 - workflow
 - read:public_key
+- read:org
 
 Scroll-down and clikc **Generate token**
 
