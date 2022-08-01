@@ -6,11 +6,13 @@
   version: '3.7'
   services:
     rover:
-      image: aztfmod/rover:1.2.3-2207.1907
+      image: aztfmod/rover:1.2.5-2207.2909
       user: vscode
 
       # Uncomment to access Azure VPN and rebuild container
       # network_mode: bridge
+      cap_add:
+        - NET_ADMIN
 
       labels:
         - "caf=Azure CAF"

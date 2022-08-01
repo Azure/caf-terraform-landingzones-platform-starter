@@ -3,6 +3,7 @@
 **/*.tfstate.backup
 **/*.tfplan
 .DS_Store
+.ignore
 **/terraform.tfstate.d
 **/terraform.tfstate.backup
 **/.terraform.tfstate.lock.info
