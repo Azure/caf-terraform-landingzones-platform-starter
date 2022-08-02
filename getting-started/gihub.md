@@ -1,5 +1,34 @@
 # Deployment through GitHub Actions workflows
 
+## Create a bootstrap token
+
+The bootstrap token is only used during the initial steps to setup your Azure environment. Set an expiration date that is long enough to support the bootstrap activities (recommended between 7 days and 1 month).
+
+From your **Github profile** go to **Settings** and select at the botton **Developer settings**
+
+![gh profile](./github/gh_profile.png)
+![gh developer settings](./github/gh_developersettings.png)
+
+Select **Personal access tokens** and click **Generate new token**
+
+![gh new pat](./github/gh_bootstrap_token.png)
+
+Set the Expiration date to desired value.
+
+Select the following scopes:
+- repo
+- workflow
+
+Scroll-down and click **Generate token**
+
+Copy the value of the PAT token.
+
+Go to the settings of your project and under the **Secrets** menu select **Actions**
+
+Select **New repository secret**
+
+Name the secret **BOOTSTRAP_TOKEN** and paste the value
+
 ## Deployment from GitHub Codespaces
 
 ### Create a PAT token
