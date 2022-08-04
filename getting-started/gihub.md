@@ -80,14 +80,14 @@ The following command assumes you have Global Admin in the tenant_name and grant
 ```
 org_name=contoso
 
-rover -bootstrap \
+cd /tf/caf && rover -bootstrap \
   -aad-app-name ${org_name}-platform-landing-zones \
   -env ${org_name} \
   -gitops-pipelines github \
   -gitops-number-runners 5 \
   -bootstrap-script '/tf/caf/landingzones/templates/platform/deploy_platform.sh' \
   -playbook '/tf/caf/landingzones/templates/platform/caf_platform_prod_nonprod.yaml' \
-  -subscription-deployment-mode multiple_subscriptions \
+  -subscription-deployment-mode multi_subscriptions \
   -sub-management <guid for management> \
   -sub-connectivity <guid for connectivity> \
   -sub-identity <guid for identity> \
