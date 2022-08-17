@@ -1,0 +1,5 @@
+[submodule "landingzones"]
+	path = landingzones
+	url = https://github.com/Azure/caf-terraform-landingzones.git
+	branch = fix.bootstrap_order
+	ignore = all
