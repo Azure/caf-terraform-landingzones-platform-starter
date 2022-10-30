@@ -25,7 +25,7 @@ git config --global --add safe.directory /tf/caf/landingzones/aztfmod
 git config --global --add safe.directory /tf/caf/aztfmod
 
 git config pull.rebase false
-git submodule add https://github.com/blinqas/caf-terraform-landingzones landingzones
+git submodule add -f -b blinq-5.6.0 https://github.com/blinqas/caf-terraform-landingzones landingzones
 git submodule update --init --recursive
 cd /tf/caf/landingzones
 git checkout blinq-5.6.0
