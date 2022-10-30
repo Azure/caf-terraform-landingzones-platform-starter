@@ -1,0 +1,6 @@
+
+[submodule "landingzones"]
+	path = landingzones
+	url = https://github.com/blinqas/caf-terraform-landingzones.git
+	branch = blinq-5.6.0
+	ignore = all

@@ -78,6 +78,15 @@ rover login -t <tenant_name> -s <subscription_id>
 The following command assumes you have Global Admin in the tenant_name and granted Owner privileges on the management subscription ```<guid for management>```
 
 ```
+git checkout blinq-5.6.0
+git config --global user.name "<your name>"
+git config --global user.email "<your email>"
+git remote remove upstream
+
+export GH_TOKEN=<your-github-personal-access-token-here>
+export GITHUB_SERVER_URL="https://github.com/blinqas"
+export GITHUB_REPOSITORY="<repository-name>"
+
 org_name=contoso
 
 cd /tf/caf && rover -bootstrap \

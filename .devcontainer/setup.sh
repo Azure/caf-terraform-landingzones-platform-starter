@@ -6,7 +6,11 @@ if [ "${CODESPACES}" = "true" ]; then
     git config --global credential.helper '!f() { sleep 1; echo "username=${GITHUB_USER}"; echo "password=${GH_TOKEN}"; }; f'
 fi
 
-sudo chmod 666 /var/run/docker.sock || true
+if [ -d "/var/run/docker.sock" ]; then
+  # Grant access to the docker socket
+  sudo chmod 666 /var/run/docker.sock
+fi
+
 sudo cp -R /tmp/.ssh-localhost/* ~/.ssh
 sudo chown -R $(whoami):$(whoami) ~ || true ?>/dev/null
 sudo chmod 400 ~/.ssh/*
@@ -20,9 +24,9 @@ git config --global --add safe.directory /tf/caf/landingzones
 git config --global --add safe.directory /tf/caf/landingzones/aztfmod
 git config --global --add safe.directory /tf/caf/aztfmod
 
-git config pull.rebase false 
-
-if [ ! -d /tf/caf/landingzones ]; then
-  git clone --branch int-5.6.0 https://github.com/Azure/caf-terraform-landingzones.git /tf/caf/landingzones
-  sudo chmod +x /tf/caf/landingzones/templates/**/*.sh
-fi
+git config pull.rebase false
+git submodule add https://github.com/blinqas/caf-terraform-landingzones landingzones
+git submodule update --init --recursive
+cd /tf/caf/landingzones
+git checkout blinq-5.6.0
+cd /tf/caf
