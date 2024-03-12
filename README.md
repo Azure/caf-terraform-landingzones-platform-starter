@@ -1,16 +1,18 @@
 [![Gitter](https://badges.gitter.im/aztfmod/community.svg)](https://gitter.im/aztfmod/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-# Cloud Adoption Framework landing zones for Terraform - Platform starter template
+# Azure Terraform SRE - Platform starter template
+
+> :warning: This solution, offered by the Open-Source community, will no longer receive contributions from Microsoft. Customers are encouraged to transition to [Microsoft Azure Verified Modules](https://aka.ms/avm) for Microsoft support and updates.
+
+> :warning: This repository has moved! Please go to <https://github.com/aztfmod/caf-terraform-landingzones-platform-starter> for the latest version.
 
 Microsoft [Cloud Adoption Framework for Azure](https://aka.ms/caf) provides you with guidance and best practices to adopt Azure.
 
-A landing zone is a segment of a cloud environment, that has been preprovisioned through code, and is dedicated to the support of one or more workloads. Landing zones provide access to foundational tools and controls to establish a compliant place to innovate and build new workloads in the cloud, or to migrate existing workloads to the cloud. Landing zones use defined sets of cloud services and best practices to set you up for success.
+A landing zone is a segment of a cloud environment, that has been pre-provisioned through code, and is dedicated to the support of one or more workloads. Landing zones provide access to foundational tools and controls to establish a compliant place to innovate and build new workloads in the cloud, or to migrate existing workloads to the cloud. Landing zones use defined sets of cloud services and best practices to set you up for success.
 
-## :rocket: Getting started: go read the docs!
+## :rocket: Getting started: go read the docs
 
-
-
-Refer to the CAF Terraform landing zones documentation available at [GitHub Pages](https://aka.ms/caf/terraform).
+Refer to the Azure Terraform SRE landing zones documentation available at [GitHub Pages](https://aztfmod.github.io/documentation/).
 
 ![homepage](https://aztfmod.github.io/documentation/img/homepage.png)
 
@@ -26,7 +28,7 @@ You can also reach us on [Gitter](https://gitter.im/aztfmod/community?utm_source
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+the rights to use your contribution. For details, visit <https://cla.opensource.microsoft.com>.
 
 When you submit a pull request, a CLA bot will automatically determine whether you need to provide
 a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
